@@ -1,3 +1,4 @@
+float direccion = 0;
 class Player extends GameObject {
 
   public Player() {
@@ -9,18 +10,8 @@ class Player extends GameObject {
     image(ciclista, this.posicion.x, this.posicion.y);
   }
 
-  public void move() {
-    if (keyPressed && (key == CODED)) {
-      if (keyCode == LEFT) {
-        this.posicion.x-=3;
-      } else if (keyCode == RIGHT) {
-        this.posicion.x+=3;
-      }
-      if (keyCode == UP) {
-        this.posicion.y-=3;
-      } else if (keyCode == DOWN) {
-        this.posicion.y+=3;
-      }
-    }
+  public void mouseMoved() {
+    this.posicion.x = mouseX;
+    this.posicion.y = mouseY;
   }
 }
